@@ -19,7 +19,6 @@ public class ClienteDAO {
 
 	public boolean insert(Cliente entity) throws SQLException {
 		String sql = "INSERT INTO Cliente(dni, email, nombre, tipoDoc)" + "VALUES(?, ?, ?, ?)";
-
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, entity.getDni());
 		ps.setString(2, entity.getEmail());
@@ -33,13 +32,26 @@ public class ClienteDAO {
 		return true;
 	}
 
-	public Cliente read(int codigo) {
-		String sql = "SELECT * FROM CLIENTES WHERE codigo = " + codigo;
-		PreparedStatement ps = con.prepareStatement(sql);
 
-		return;
-	}
 
+private Cliente read(int codigo){
+	String sql = "SELECT * FROM CLIENTES WHERE codigo = " + codigo;
+	PreparedStatement ps = con.prepareStatement(sql);
+         ps.executeQuery();
+         Ticket  ticket = new Ticket();
+
+        ticket.setcodigo( ps.getParameter(1));
+          ticket.setfechaingreso(ps.getParameter(2));
+          ticket.setfechasalida(ps.getParameter(3));
+        ticket.settiempo( ps.getParameter(4));
+          ticket.setvalor(ps.getParameter(5));
+          ticket.setvehiculo(ps.getParameter(6));
+         return ticket;
+     }catch(Exception e){
+         System.out.println(e.printStrackTrace());
+         ticket = null;
+         return ticket;
+     }
 	public boolean delete(int codigo) {
 
 		return true;
