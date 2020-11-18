@@ -1,10 +1,9 @@
 package ec.edu.ups.gestionparqueadero.ObjetosAccesoDatos;
+
 //import java.sql.Date;
 import ec.edu.ups.gestionparqueadero.Entidades.Ticket;
 
 public class TicketDAO {
-	
-	
 
 private boolean insert(Ticket ticket){
      String dml = "INSERT INTO Ticket(codigo, placa_vehiculo, fecha_ingreso VALUES (?, ?, ?)";
@@ -24,7 +23,6 @@ private boolean insert(Ticket ticket){
      }
 
 }
-
 
 private Ticket read(String ticket){
      String dml = "SELECT * FROM Ticket WHERE  codigo = ticket";
@@ -46,21 +44,20 @@ private Ticket read(String ticket){
          ticket = null;
          return ticket;
      }
-     
-     
-	public boolean insert(Ticket ticket){
-		return true;
-	}
-	
-	public boolean update(Ticket ticket){
+
+	public boolean insert(Ticket ticket) {
 		return true;
 	}
 
-	public Ticket read(int codigo){
-		return ;
+	public boolean update(Ticket ticket) {
+		return true;
 	}
-	
-	public boolean delete(int codigo){
+
+	public Ticket read(int codigo) {
+		return;
+	}
+
+	public boolean delete(int codigo) {
 		return true;
 	}
 }
