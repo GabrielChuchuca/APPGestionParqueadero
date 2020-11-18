@@ -23,8 +23,8 @@ public class ClienteDAO {
 		PreparedStatement ps = con.prepareStatement(sql);
 		ps.setString(1, entity.getDni());
 		ps.setString(2, entity.getEmail());
-		ps.setString(2, entity.getNombre());
-		ps.setInt(2, entity.getTipoDocumento());
+		ps.setString(3, entity.getNombre());
+		ps.setInt(4, entity.getTipoDocumento());
 		return true;
 		
 	}
@@ -33,6 +33,9 @@ public class ClienteDAO {
 	}
 	
 	public Cliente read(int codigo) {
+		String sql = "SELECT * FROM CLIENTES WHERE codigo = " + codigo;
+		PreparedStatement ps = con.prepareStatement(sql);
+		
 		
 		return ;
 	}

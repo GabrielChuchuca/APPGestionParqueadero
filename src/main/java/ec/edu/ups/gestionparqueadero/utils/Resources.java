@@ -11,7 +11,7 @@ import javax.sql.DataSource;
 
 public class Resources {
 
-	String dsName = "java:comp/DefaultDataSource";
+	String dsName = "java:jboss/datasources/parqueaderosDS";
                  
     @Produces
     private Connection createConnection() throws SQLException, NamingException {
