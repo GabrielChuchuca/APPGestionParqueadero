@@ -1,4 +1,4 @@
-package ec.ups.edu.appdis.g2.parqueadero.utils;
+package ec.edu.ups.gestionparqueadero.utils;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 public class Resources {
 
 	String dsName = "java:comp/DefaultDataSource";
-
+                 
     @Produces
     private Connection createConnection() throws SQLException, NamingException {
         InitialContext ic = new InitialContext();
